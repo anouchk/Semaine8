@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> CV Ana semaine 7 scroll</title>
+		<meta charset="utf-8"/>
+		<link href="css/bootstrap.min.css" rel="stylesheet"><!--lien vers bootstrap CSS--> 
+    	<link type="text/css" rel="stylesheet" href="css/stylesheet.css"/> <!--lien vers la feuille de style CSS-->    
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->	
+		
+			
+		<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<!--<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>-->
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+    	<script type="text/javascript" src="js/scrollmovement.js"></script>
+    	<script type="text/javascript" src="js/addheight.js"></script>
+    	<script type="text/javascript" src="js/jquery.easing.min.js"></script> 
+    	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    	<script type="text/javascript">
+    	
+    $(function () {
+        
+        var filterList = {
+        
+            init: function () {
+            
+                // Plugin Mixitup, qui permet de filtrer les vignettes par catégorie
+                $('#portfoliolist').mixitup({
+                    targetSelector: '.portfolio',
+                    filterSelector: '.filter',
+                    effects: ['fade'],
+                    easing: 'snap',
+                    // call the hover effect
+                    onMixEnd: filterList.hoverEffect()
+                });             
+            
+            },
+            
+            hoverEffect: function () {
+            
+                // Fonction pour l'effet "hover"
+                $('#portfoliolist .portfolio').hover(
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                        $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');             
+                    },
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                        $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');                               
+                    }       
+                );              
+            
+            }
+        };
+        
+        // Lance les deux fonctions "hover" et "filtre"
+        filterList.init();
+        
+        
+    }); 
+ 
+      // Scrollspy fluide
+      $(function () {
+        $('header a').on('click', function(e) {
+          e.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(this.hash).offset().top
+          }, 1000, function(){
+            window.location.hash = hash;
+          });
+        });
+      });
+    </script>
+		
+	</head>
+	
+	<body id="page-top" dataspy="scroll" data-target=".navbar">
+		<div class=container-fluid">
+		
+		<header>
+	  		<div class="navbar navbar-inverse navbar-fixed-top"> 
+     			<div class="container">
+      				<div class="navbar-header">
+      			 		<button type="button" class="navbar-toggle" href="deroule" data-toggle="collapse" data-target=".navbar-collapse">
+      						<span class="icon-bar"></span>
+      						<span class="icon-bar"></span>
+      						<span class="icon-bar"></span>
+    						</button>
+      					<a class="navbar-brand" href="#page-top">Ana Lutzky</a>
+      				</div>
+      				
+      				<div id="deroule" class="collapse navbar-collapse">
+      				<ul class="nav navbar-nav">
+        				<li class="hidden"><a href="#page-top"></a></li>
+       		 			<li class="active"><a href="#parcours">Parcours</a></li>
+        				<li><a href="#ambitions">Ambitions</a></li>
+        				<li><a href="#experience">Expérience</a></li>
+        				<li><a href="#portfolio">Portfolio</a></li>
+        				<li><a href="#contact">Contact</a><li>      		
+      				</ul>
+      				</div>
+      			</div>
+      		</div>
+
+	
+		<header>
+		<div class="header">	
+			<div class="container-fluid"> 
+				<div class="img-responsive image col-md-4">
+					<img src="hands.jpg" alt"journalisme" width="50%">
+				</div>
+				<div  class="col-md-5 h1">
+						<p><strong>Ana Lutzky</strong></p>
+						</br>
+						<p><strong>Datajournaliste</strong></p>
+				</div>
+			</div>
+		</div>
+		</header>
+		
+		<main>
+			<section id="parcours">
+				<div class="container">
+					<h1> Parcours avant la formation Simplonline</h1>
+						<ul>
+							<li> 2004 : <strong>Université Paris Dauphine.</strong> DEA d’économie et finances internationales.</li>
+							<li> 2003 : <strong>Sciences Po Paris.</strong> Master en journalisme.</li>
+							<li> 1999 : <strong> Bac S.</strong> Spécialité mathématiques.</li>
+						</ul>
+				</div>
+			</section>
+			
+			<section id="ambitions">
+				<div class="container">
+					<h1>Mes ambitions</h1>
+						<ul>
+							<li> Devenir une <strong>datajournaliste</strong> à part entière</li>
+							<li> Maîtriser <strong>Python</strong> pour pouvoir jouer avec les données</li>
+							<li> Bien connaître les outils de <strong>visualisation</strong> : Javascript, HTML et CSS</li>
+						</ul>
+				</div>
+			</section>
+		
+			<section id="experience">
+				<div class="container">
+					<h1>Expérience professionnelle</h1>
+						<ul>
+							<li> 2011-2015 : <strong>AEF DD.</strong> Journaliste RSE (responsabilité sociale et environnementale) des entreprises. Gouvernance, transparence, finance et financement de la transition énergétique.</li> 
+							<li> 2008-2011 : <strong>L’USINE NOUVELLE.</strong> Journaliste énergie et environnement au sein de la rédaction web.</li>
+							<li> 2009-2010 : <strong>INDUSTRIE ET TECHNOLOGIES.</strong> Rédaction de la "fiche métier" mensuelle.</li>
+							<li> 2006-2008 : <strong>RFI.</strong> Chroniqueuse sur la formation à distance, pour l’émission hebdomadaire l’Ecole des savoirs.</li>
+							<li> 2006 : <strong>ALTERNATIVES ECONOMIQUES.</strong> Pigiste. L'école française et l’égalité des chances. Argentine post-crise de 2001.</li>
+							<li> 2004-2007 : <strong>ANIMAFAC.</strong> Coordination et animation du mensuel et du site internet. Partenariat avec France Info sur l’émission Info Campus. Coordination de rencontres thématiques d’associatifs étudiants.</li>
+							<li> 2003 : <strong>HEC.</strong> Coauteur de guides sur la création d'entreprise avec Robert Papin, directeur d'HEC-Entrepreneurs.</li>
+							<li> 2000-20012 : <strong>STAGES.</strong> Libération, service société et service web, Le Figaro Magazine section culture, France Bleu Gironde, France 2, Radio LatriBu à Buenos Aires.</li>
+						</ul>
+				</div>
+			</section>
+			
+			<section id="portfolio">
+	            <div class="container">
+			        <h1>Portfolio</h1></br>
+			            <!--data-filter permet de filtrer les vignettes par catégorie-->
+			            <ul id="filters" class="clearfix row">
+			                <li><span class="filter active" data-filter="cat1 cat2 cat3 cat4">Toutes mes catégories</span></li>
+			                <li><span class="filter" data-filter="cat1">HTML/CSS</span></li>
+			                <li><span class="filter" data-filter="cat2">Javascript</span></li>
+			                <li><span class="filter" data-filter="cat3">Bootstrap</span></li>
+			                <li><span class="filter" data-filter="cat4">Ruby</span></li>
+		            	</ul>
+			            <div id="portfoliolist"> <!--La div qui contient les vignettes des projets-->
+			                <div class="portfolio cat2" data-cat="cat2">
+			                    <div class="portfolio-wrapper">             
+			                        <img src="images/5.jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Annuaire</a>
+			                                <span class="text-category">Javascript</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div>    
+			                <div class="portfolio cat1" data-cat="cat1">
+			                    <div class="portfolio-wrapper">         
+			                        <img src="images/1.jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Titre de mon projet HTML/CSS</a>
+			                                <span class="text-category">HTML/CSS</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div>   
+			                <div class="portfolio cat4" data-cat="cat4">
+			                    <div class="portfolio-wrapper">         
+			                        <img src="images/1 (1).jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">API Open Food Facts</a>
+			                                <span class="text-category">Ruby</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div>      
+			                <div class="portfolio cat1" data-cat="cat1">
+			                    <div class="portfolio-wrapper">
+			                        <img src="images/3.jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Page de profil</a>
+			                                <span class="text-category">HTML/CSS</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div> 
+			                <div class="portfolio cat2" data-cat="cat2">
+			                    <div class="portfolio-wrapper">         
+			                        <img src="images/1 (3).jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Titre de mon projet en Javascript</a>
+			                                <span class="text-category">Javascript</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div>     
+			                <div class="portfolio cat1" data-cat="cat1">
+			                    <div class="portfolio-wrapper">         
+			                        <img src="images/2.jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Page placement div</a>
+			                                <span class="text-category">HTML/CSS</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div>    
+			                <div class="portfolio cat4" data-cat="cat4">
+			                    <div class="portfolio-wrapper">         
+			                        <img src="images/2 (1).jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Exercice en Ruby</a>
+			                                <span class="text-category">Ruby</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div>  
+			                <div class="portfolio cat3" data-cat="cat3">
+			                    <div class="portfolio-wrapper">         
+			                        <img src="images/1 (2).jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Exercice utilisation Bootstrap</a>
+			                                <span class="text-category">Bootstrap</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div> 
+			                <div class="portfolio cat4" data-cat="cat4">
+			                    <div class="portfolio-wrapper">         
+			                        <img src="images/3.png" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Titre de mon projet avec Ruby</a>
+			                                <span class="text-category">Ruby</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div>  
+			                <div class="portfolio cat2" data-cat="cat2">
+			                    <div class="portfolio-wrapper">         
+			                        <img src="images/3 (1).jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Tic-Tac-Toe</a>
+			                                <span class="text-category">Javascript</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div>  
+			                <div class="portfolio cat2" data-cat="cat2">
+			                    <div class="portfolio-wrapper">         
+			                        <img src="images/4.jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Pierre-Feuille-Ciseau</a>
+			                                <span class="text-category">Javascript</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div>  
+			                <div class="portfolio cat3" data-cat="cat3">
+			                    <div class="portfolio-wrapper">         
+			                        <img src="images/2 (2).jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Titre de mon projet Bootstrap</a>
+			                                <span class="text-category">Bootstrap</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div>  
+			                <div class="portfolio cat2" data-cat="cat2">
+			                    <div class="portfolio-wrapper">         
+			                        <img src="images/2 (3).jpg" alt="" />
+			                        <div class="label">
+			                            <div class="label-text">
+			                                <a class="text-title">Cookie Clicker</a>
+			                                <span class="text-category">Javascript</span>
+			                            </div>
+			                            <div class="label-bg"></div>
+			                        </div>
+			                    </div>
+			                </div>              
+			            </div>	
+	            	</div>
+	        	</section>
+				
+		</main>	
+		
+		
+		<footer>	    
+			<section id="contact"> 
+				<div class="container">
+					<h1>Contact</h1></br>
+						<div class="row">
+							<div class="carte col-md-6">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10505.943766217897!2d2.346554336236095!3d48.82986895480186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6718ec617881b%3A0x462ecdd374901b48!2s13+Rue+Nicolas+Fortin%2C+75013+Paris!5e0!3m2!1sen!2sfr!4v1457296471576" width="50%" height="225" frameborder="0" style="border:0" allowfullscreen></iframe>
+							</div>
+							<div clas="texte_carte col-md-6">	
+								<h3>Mes coordonnées :</h3>				
+								<p><i class="fa fa-female"></i>Ana Lutzky</p>
+								<p><i class="fa fa-home"></i>13 rue Nicolas Fortin 75013 Paris</p>
+								<p><i class="fa fa-mobile"></i>06 20 33 34 75</p>
+								<p><i class="fa fa-envelope-o"></i> <a href="mailto:analutzky@gmail.com">analutzky@gmail.com</a></p>
+							</div>
+						</div>	
+				</div>
+		</footer>
+	</div>	
+	
+	</body>
+</html> 	
